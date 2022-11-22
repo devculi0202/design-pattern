@@ -39,7 +39,7 @@ public class CustomInjector {
 
     private  static List<Class<?>> getClientClasses(Class<?> mainClass) throws IOException, ClassNotFoundException {
         List<Class<?>> clientClasses = new ArrayList<>();
-        List<Class<?>> classes = ClassLoaderUtil.getClasses(mainClass.getPackageName());
+        List<Class<?>> classes = ClassLoaderUtil.getClasses(mainClass.getPackage().getName());
         clientClasses = classes.stream().filter(clazz -> isClientClass(clazz)).collect(Collectors.toList());
         return clientClasses;
     }
