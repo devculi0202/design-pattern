@@ -1,30 +1,21 @@
 package com.devculi.designpattern.creationals.singleton.fix;
 
-import java.lang.reflect.Constructor;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-
 
 public class SingletonHandler
 {
-    public static void main(String[] args) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, CloneNotSupportedException
+    public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, IOException, CloneNotSupportedException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
     {
+        SingletonFixViolation singletonFixSerializable = SingletonFixViolationFactory.getFixViolation(ViolationType.SERIALIZABLE);
+        singletonFixSerializable.fix();
 
-        SingletonFixViolation singleton1 = SingletonFixViolation.getInstance();
-        SingletonFixViolation singleton2 = SingletonFixViolation.getInstance();
+        SingletonFixViolation singletonFixClonable = SingletonFixViolationFactory.getFixViolation(ViolationType.CLONABLE);
+        singletonFixClonable.fix();
 
-        System.out.println("instance1 hashcode " + singleton1.hashCode());
-        System.out.println("instance2 hashcode " + singleton2.hashCode());
-
-        //Fix singleton violation through reflect.
-        Constructor<SingletonFixViolation> constructor =  SingletonFixViolation.class.getDeclaredConstructor();
-        constructor.setAccessible(true);
-        SingletonFixViolation signletonUseReflect = constructor.newInstance();
-        System.out.println("signletonUseReflect hashcode " + signletonUseReflect.hashCode());
-
-        //Fix singleton violation through clone
-        SingletonFixViolation singletonFixClonable  = (SingletonFixViolation)singleton2.clone();
-        System.out.println("singletonFixClonable hashcode " + singletonFixClonable.hashCode());
-
+        SingletonFixViolation singletonFixReflection = SingletonFixViolationFactory.getFixViolation(ViolationType.REFLECT);
+        singletonFixReflection.fix();
 
     }
 

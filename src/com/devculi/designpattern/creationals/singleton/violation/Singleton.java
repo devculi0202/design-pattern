@@ -1,7 +1,12 @@
 package com.devculi.designpattern.creationals.singleton.violation;
 
-public class Singleton implements Cloneable
+import java.io.Serializable;
+
+public class Singleton implements Cloneable, Serializable
 {
+    /** serialVersionUID */
+    private static final long serialVersionUID = 1L;
+
     private static Singleton uniqueInstance = null;
     private Singleton() {
     }

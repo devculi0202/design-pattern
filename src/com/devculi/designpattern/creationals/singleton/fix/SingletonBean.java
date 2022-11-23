@@ -1,5 +1,5 @@
 /*
- * SingletonFixReflection.java
+ * SingletonBean.java
  *
  * Copyright by CRIF AG
  * Zürich
@@ -7,6 +7,7 @@
  */
 package com.devculi.designpattern.creationals.singleton.fix;
 
+import java.io.Serializable;
 
 /**
  *
@@ -14,10 +15,13 @@ package com.devculi.designpattern.creationals.singleton.fix;
  * @author ltduy
  * @version $Revision:  $
  */
-public class SingletonFixViolation implements Cloneable
+public class SingletonBean implements Cloneable, Serializable
 {
-    private static SingletonFixViolation uniqueInstance = null;
-    private SingletonFixViolation() {
+    /** serialVersionUID */
+    private static final long serialVersionUID = 1L;
+
+    private static SingletonBean uniqueInstance = null;
+    private SingletonBean() {
         if (uniqueInstance != null)
         {
             throw new RuntimeException("Can't create instance. Please use getInsance() to create it.");
@@ -37,13 +41,19 @@ public class SingletonFixViolation implements Cloneable
         return super.clone();
     }
 
-    public static SingletonFixViolation getInstance()
+    public static SingletonBean getInstance()
     {
         if (uniqueInstance == null) {
-            uniqueInstance = new SingletonFixViolation();
+            uniqueInstance = new SingletonBean();
         }
         return uniqueInstance;
     }
+
+    private Object readResolve() {
+        return SingletonBean.getInstance();
+    }
+
+
 }
 
 
