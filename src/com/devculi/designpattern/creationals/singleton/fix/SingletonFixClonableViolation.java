@@ -33,6 +33,8 @@ public class SingletonFixClonableViolation implements SingletonFixViolation
         //fix singleton violation use clonable
         SingletonBean singletonUseClonable =  (SingletonBean) singleton1.clone();
         System.out.println("singletonUseClonable hashcode " + singletonUseClonable.hashCode());
+        
+        
     }
 
 }
