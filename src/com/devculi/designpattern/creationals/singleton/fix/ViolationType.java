@@ -1,25 +1,12 @@
 /*
  * ViolationType.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.singleton.fix;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public enum ViolationType
 {
   SERIALIZABLE, REFLECT, CLONABLE
 }
-
-
-/*
- * Changes:
- * $Log: $
- */

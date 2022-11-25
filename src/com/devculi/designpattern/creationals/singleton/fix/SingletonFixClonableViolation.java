@@ -1,18 +1,11 @@
 /*
  * SingletonFixClonableViolation.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.singleton.fix;
 
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public class SingletonFixClonableViolation implements SingletonFixViolation
 {
@@ -33,14 +26,5 @@ public class SingletonFixClonableViolation implements SingletonFixViolation
         //fix singleton violation use clonable
         SingletonBean singletonUseClonable =  (SingletonBean) singleton1.clone();
         System.out.println("singletonUseClonable hashcode " + singletonUseClonable.hashCode());
-        
-        
     }
-
 }
-
-
-/*
- * Changes:
- * $Log: $
- */

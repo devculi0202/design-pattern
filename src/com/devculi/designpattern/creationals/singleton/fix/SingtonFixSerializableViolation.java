@@ -9,10 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public class SingtonFixSerializableViolation implements SingletonFixViolation
 {
@@ -40,11 +37,4 @@ public class SingtonFixSerializableViolation implements SingletonFixViolation
         SingletonBean singletonUseSerializable = (SingletonBean)objectInputStream.readObject();
         System.out.println("singletonUseSerializable hashcode " + singletonUseSerializable.hashCode());
     }
-
 }
-
-
-/*
- * Changes:
- * $Log: $
- */

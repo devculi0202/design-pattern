@@ -1,9 +1,5 @@
 /*
  * SingletonFixRelfection.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.singleton.fix;
 
@@ -13,10 +9,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public class SingletonFixRelfection implements SingletonFixViolation
 {
@@ -46,9 +39,3 @@ public class SingletonFixRelfection implements SingletonFixViolation
     }
 
 }
-
-
-/*
- * Changes:
- * $Log: $
- */

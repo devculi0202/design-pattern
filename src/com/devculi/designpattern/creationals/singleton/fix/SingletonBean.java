@@ -1,19 +1,12 @@
 /*
  * SingletonBean.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.singleton.fix;
 
 import java.io.Serializable;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public class SingletonBean implements Cloneable, Serializable
 {
@@ -52,12 +45,4 @@ public class SingletonBean implements Cloneable, Serializable
     private Object readResolve() {
         return SingletonBean.getInstance();
     }
-
-
 }
-
-
-/*
- * Changes:
- * $Log: $
- */

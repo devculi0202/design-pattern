@@ -1,17 +1,10 @@
 /*
  * SingletonFixViolationFactory.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.singleton.fix;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public class SingletonFixViolationFactory
 {
