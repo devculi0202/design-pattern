@@ -1,17 +1,10 @@
 /*
  * Product1Factory.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.factory.abstracts;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public class Product1Factory extends AbstractFactory
 {
@@ -24,9 +17,3 @@ public class Product1Factory extends AbstractFactory
         return new ConcreteProduct1();
     }
 }
-
-
-/*
- * Changes:
- * $Log: $
- */

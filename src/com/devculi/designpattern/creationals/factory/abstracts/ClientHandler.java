@@ -1,17 +1,10 @@
 /*
  * ClientHandler.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.factory.abstracts;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision: $
+ * @author devculi
  */
 
 /*
@@ -28,7 +21,3 @@ public class ClientHandler
       System.out.println(product2.getName());
     }
 }
-
-/*
- * Changes: $Log: $
- */
