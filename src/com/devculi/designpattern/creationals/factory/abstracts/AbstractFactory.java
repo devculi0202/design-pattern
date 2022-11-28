@@ -17,7 +17,7 @@ public abstract class AbstractFactory
     public static Product create(String factoryClass) throws Exception
     {
             logger.log(Level.INFO, "Create product from " + factoryClass);
-            return FactoryFinder.createProduct(factoryClass);
+            return FactoryFinder.find(factoryClass);
     }
     protected abstract Product createProduct();
 }

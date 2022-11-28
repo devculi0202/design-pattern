@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
  */
 class FactoryFinder
 {
-    static Product createProduct(String factoryClass) throws Exception
+    static Product find(String factoryClass) throws Exception
     {
         try
         {

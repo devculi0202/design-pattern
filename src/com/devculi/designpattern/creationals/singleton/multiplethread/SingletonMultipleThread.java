@@ -1,48 +1,25 @@
 /*
  * SingletonMultipleThread.java
- *
- * Copyright by CRIF AG
- * Zürich
- * All rights reserved.
  */
 package com.devculi.designpattern.creationals.singleton.multiplethread;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.Date;
 
 /**
- *
- *
- * @author ltduy
- * @version $Revision:  $
+ * @author devculi
  */
 public class SingletonMultipleThread
 {
     public static void main(String[] args)
     {
-        ExecutorService excutorService = Executors.newFixedThreadPool(3);
-        excutorService.execute(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-               SingletonRun singletonRun = SingletonRun.getInstance();
-               System.out.println("singletonRun hashcode"+singletonRun.hashCode());
-            }
-        });
-
-        excutorService.execute(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-               SingletonRun singletonRun = SingletonRun.getInstance();
-               System.out.println("singletonRun hashcode" + singletonRun.hashCode());
-            }
-        });
-
-        excutorService.shutdown();
-
+        SingletonRunner runner = new SingletonRunner();
+        for(int index = 0; index < 3; index++) {
+            long startTime =  System.currentTimeMillis();
+            System.out.println("Start at " + new Date(startTime));
+            Thread thread = new Thread(runner);
+            System.out.println("Thread id "+ thread.getId() + " with name " +  thread.getName());
+            thread.start();
+        }
     }
 
 }

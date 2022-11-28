@@ -15,13 +15,13 @@ import java.io.Serializable;
  * @author ltduy
  * @version $Revision:  $
  */
-public class SingletonRun implements Cloneable, Serializable
+public class Singleton implements Cloneable, Serializable
 {
     /** serialVersionUID */
     private static final long serialVersionUID = 1L;
 
-    private static SingletonRun uniqueInstance = null;
-    private SingletonRun() {
+    private static Singleton uniqueInstance = null;
+    private Singleton() {
         if (uniqueInstance != null)
         {
             throw new RuntimeException("Can't create instance. Please use getInsance() to create it.");
@@ -41,22 +41,27 @@ public class SingletonRun implements Cloneable, Serializable
         return super.clone();
     }
 
-    public static SingletonRun getInstance()
+    public static  Singleton getInstance()
     {
         if (uniqueInstance == null) {
-            uniqueInstance = new SingletonRun();
+            synchronized (Singleton.class)
+            {
+                if (uniqueInstance == null) {
+                uniqueInstance = new Singleton();
+                }
+            }
         }
         return uniqueInstance;
     }
 
     private Object readResolve() {
-        return SingletonRun.getInstance();
+        return Singleton.getInstance();
     }
 
 
     public static void run()
     {
-        SingletonRun singletonRun = SingletonRun.getInstance();
+        Singleton singletonRun = Singleton.getInstance();
         System.out.println("singletonRun hashcode" + singletonRun.hashCode());
     }
 
