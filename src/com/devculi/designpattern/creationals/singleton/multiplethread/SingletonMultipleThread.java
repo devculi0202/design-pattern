@@ -21,11 +21,4 @@ public class SingletonMultipleThread
             thread.start();
         }
     }
-
 }
-
-
-/*
- * Changes:
- * $Log: $
- */

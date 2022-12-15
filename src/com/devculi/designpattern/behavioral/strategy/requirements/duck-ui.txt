@@ -1,0 +1,14 @@
+1. Requirement 1
+A highly successful duck pond simulation  game called SimUDuck
+The game can show a large variety of duck swimming and making quacking sounds
+The variety of duck is MallardDuck and RedheadDuck.
+The mallardDuck can swimming and its quacking sounds is "quack quack"
+The RedheadDuck also can swiming and its quacking sounds is " qua qua"
+
+2. Requirement 2
+- add rubber duck
+- we need the ducks to fly except the rubber duck
+
+3. Requirement 3
+- add DecoyDuck (it could not swiming, fly, and doesn't have sounds)
+
