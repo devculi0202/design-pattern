@@ -1,11 +1,11 @@
-package com.devculi.designpattern.behavioral.strategy.implement.myself.duckui.requirement3.fixbug;
+package com.devculi.designpattern.behavioral.strategy.implement.standard;
 
-public abstract class Duck {
+public abstract class Duck
+{
+    private String name;
     
     private Quackable quackable;
     private Flyable flyable;
-    
-    private String name;
     
     public Duck(String name) {
         this.name = name;
@@ -16,7 +16,23 @@ public abstract class Duck {
         this.quackable = quackable;
         this.flyable = flyable;
     }
-
+    
+    public void setQuackable(Quackable quackable) {
+        this.quackable = quackable;
+    }
+    
+    public void setFlyable (Flyable flyable) {
+        this.flyable = flyable;
+    }
+    
+    public void performQuack() {
+        quackable.quack();
+    }
+    
+    public void performFly() {
+        flyable.fly();
+    }
+    
     /**
      * Gets the name
      *
