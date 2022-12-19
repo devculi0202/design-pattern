@@ -4,13 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.devculi.dependence.injection.framwork.annotations.CustomAutowired;
+import com.devculi.dependence.injection.framwork.annotations.CustomComponent;
 
 
+@CustomComponent
 public class DuckUIApp {
 
     private static List<Duck> ducks = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
     private static boolean isLoopMenu = true;
+
+    @CustomAutowired
+    private MallardDuck mallardDuck;
+    @CustomAutowired
+    private RedheadDuck redheadDuck;
+    @CustomAutowired
+    private RubberDuck rubberDuck;
+    @CustomAutowired
+    private DecoyDuck decoyDuck;
 
     public static void main(String[] args) {
         System.out.println("Strategy pattern");
