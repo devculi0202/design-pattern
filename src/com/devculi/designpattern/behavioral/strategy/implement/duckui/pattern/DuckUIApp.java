@@ -17,10 +17,13 @@ public class DuckUIApp {
 
     @CustomAutowired
     private MallardDuck mallardDuck;
+
     @CustomAutowired
     private RedheadDuck redheadDuck;
+
     @CustomAutowired
     private RubberDuck rubberDuck;
+
     @CustomAutowired
     private DecoyDuck decoyDuck;
 

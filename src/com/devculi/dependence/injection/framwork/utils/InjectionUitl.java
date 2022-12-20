@@ -21,13 +21,26 @@ public class InjectionUitl
             String valueQualifier = "";
             if (field.isAnnotationPresent(CustomQualifier.class)) {
                 valueQualifier = field.getAnnotation(CustomQualifier.class).value();
-            } else {
-                valueQualifier = null;
             }
-            Object fieldInstance =  injector.getBeanInstance(field.getType(), field.getName(), valueQualifier);
+            Object fieldInstance = null;
             try
             {
-                field.set(clazzInstance, fieldInstance);
+                fieldInstance = injector.getBeanInstance(field.getType(), field.getName(), valueQualifier);
+            }
+            catch (InstantiationException instantiationException)
+            {
+                logger.log(Level.WARNING, instantiationException.getMessage(), instantiationException);
+            }
+            catch (IllegalAccessException illegalAccessException)
+            {
+                logger.log(Level.WARNING, illegalAccessException.getMessage(), illegalAccessException);
+            }
+            try
+            {
+                if(fieldInstance != null) {
+                    field.set(clazzInstance, fieldInstance);
+                }
+
             }
             catch (IllegalArgumentException | IllegalAccessException e)
             {

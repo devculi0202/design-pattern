@@ -30,6 +30,9 @@ public class DependenceInjectionApplication
           // 3. get service to run
 //            injector.getService();
         }
+        else {
+            throw new RuntimeException("Cannot run application. The cause is "+ mainClass.getName() + " doesn't have CustomApplication annotation");
+        }
     }
 
     private void startApplication(Class<?> mainClass) throws IOException, ClassNotFoundException {
