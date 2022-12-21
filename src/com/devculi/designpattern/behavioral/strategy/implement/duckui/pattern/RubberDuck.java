@@ -9,6 +9,15 @@ public class RubberDuck extends Duck
     /**
      * Constructor
      *
+     */
+    public RubberDuck()
+    {
+        super();
+    }
+
+    /**
+     * Constructor
+     *
      * @param name
      */
     public RubberDuck(String name)

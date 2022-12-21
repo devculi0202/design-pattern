@@ -6,6 +6,16 @@ import com.devculi.dependence.injection.framwork.annotations.CustomComponent;
 public class DecoyDuck extends Duck
 {
 
+
+    /**
+     * Constructor
+     *
+     */
+    public DecoyDuck()
+    {
+        super();
+    }
+
     /**
      * Constructor
      *
@@ -19,6 +29,6 @@ public class DecoyDuck extends Duck
     public DecoyDuck(String name, Quackable quackable, Flyable flyable) {
         super(name, quackable, flyable);
     }
-    
-    
+
+
 }

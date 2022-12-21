@@ -38,6 +38,7 @@ public class InjectionUitl
             try
             {
                 if(fieldInstance != null) {
+                    field.setAccessible(true);
                     field.set(clazzInstance, fieldInstance);
                 }
 

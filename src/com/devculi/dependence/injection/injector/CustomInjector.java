@@ -78,8 +78,8 @@ public class CustomInjector
     }
 
     /* get instance of specific Service */
-    public  <T> T getService(Class<?> serviceClass) {
-        return null;
+    public  <T> T getService(Class<?> serviceClass) throws InstantiationException, IllegalAccessException {
+        return getBeanInstance(serviceClass);
     }
 
     public <T> Object getBeanInstance(Class<?> fieldClass, String fieldName, String qualifier) throws InstantiationException, IllegalAccessException
@@ -95,6 +95,10 @@ public class CustomInjector
         Object implemtationInstance = implementationClass.newInstance();
         instanceClassesHaveCustomComponentAnnotationMap.put(implementationClass, implemtationInstance);
         return implemtationInstance;
+    }
+
+    private <T> T getBeanInstance(Class<?> serviceClass) throws InstantiationException, IllegalAccessException {
+        return (T) getBeanInstance(serviceClass, null,null);
     }
 
     private Class<?> getImplemntationClass(Class<?> fieldClass, String fieldName, String qualifier) {

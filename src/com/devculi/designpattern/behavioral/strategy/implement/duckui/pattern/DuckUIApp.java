@@ -27,7 +27,7 @@ public class DuckUIApp {
     @CustomAutowired
     private DecoyDuck decoyDuck;
 
-    public static void main(String[] args) {
+    public void run() {
         System.out.println("Strategy pattern");
         initData(ducks);
         while (isLoopMenu) {
@@ -38,11 +38,12 @@ public class DuckUIApp {
 
             } catch (Exception e) {
                 System.out.println("Your option was wrong! Please choose again");
+                isLoopMenu = false;
             }
         }
     }
 
-    private static void displayDucks(List<Duck> ducks) {
+    private void displayDucks(List<Duck> ducks) {
         System.out.println("\n --MENU-- \n");
         for (int index = 0; index < ducks.size(); index++) {
             int position = index + 1;
@@ -50,7 +51,7 @@ public class DuckUIApp {
         }
     }
 
-    private static void getOptionOfUser(int option, List<Duck> ducks) {
+    private void getOptionOfUser(int option, List<Duck> ducks) {
         if (option == 0) {
             closeApp();
         } else if (option > 0 && option <= ducks.size()) {
@@ -69,16 +70,31 @@ public class DuckUIApp {
         }
     }
 
-    private static void closeApp() {
+    private void closeApp() {
         isLoopMenu = false;
         System.out.println("Close app!");
     }
 
-    private static void initData(List<Duck> ducks) {
-        ducks.add(new MallardDuck("MallardDuck", new QuackQuackable(), new FlyWithWings()));
-        ducks.add(new RedheadDuck("RedheadDuck", new QuackQuackable(), new FlyWithWings()));
-        ducks.add(new RubberDuck("RubberDuck", new QuipQuackable(), new FlyNoWay()));
-        ducks.add(new DecoyDuck("DecoyDuck", new MuteQuackable(), new FlyNoWay()));
+    private void initData(List<Duck> ducks) {
+        mallardDuck.setName("MallardDuck");
+        mallardDuck.setQuackable(new QuackQuackable());
+        mallardDuck.setFlyable(new FlyWithWings());
+        ducks.add(mallardDuck);
+
+        redheadDuck.setName("RedheadDuck");
+        redheadDuck.setQuackable(new QuackQuackable());
+        redheadDuck.setFlyable(new FlyWithWings());
+        ducks.add(redheadDuck);
+
+        rubberDuck.setName("RubberDuck");
+        rubberDuck.setQuackable(new QuipQuackable());
+        rubberDuck.setFlyable(new FlyNoWay());
+        ducks.add(rubberDuck);
+
+        decoyDuck.setName("DecoyDuck");
+        decoyDuck.setQuackable(new MuteQuackable());
+        decoyDuck.setFlyable(new FlyNoWay());
+        ducks.add(decoyDuck);
 
     }
 }

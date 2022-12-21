@@ -9,6 +9,15 @@ public class RedheadDuck extends Duck
     /**
      * Constructor
      *
+     */
+    public RedheadDuck()
+    {
+        super();
+    }
+
+    /**
+     * Constructor
+     *
      * @param name
      */
     public RedheadDuck(String name)
