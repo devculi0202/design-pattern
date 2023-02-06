@@ -10,6 +10,7 @@ public class DesignPatternApplication
 {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException
     {
+		System.println.out("Start application!");
         DependenceInjectionApplication.run(DesignPatternApplication.class, args);
     }
 }
